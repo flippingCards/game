@@ -1,24 +1,7 @@
 body {
   background-color: #840303;
   opacity: 1;
-  background-image: repeating-linear-gradient(
-      45deg,
-      #fcfdbd 25%,
-      transparent 25%,
-      transparent 50%,
-      #fcfdbd 75%,
-      #fcfdbd
-    ),
-    repeating-linear-gradient(
-      45deg,
-      #fcfdbd 25%,
-      #840303 25%,
-      #840303 75%,
-      #fcfdbd 75%,
-      #fcfdbd
-    );
-  background-position: 0 0, 40px 40px;
-  background-size: 80px 80px;
+  background-image:url("./Images/background.jpg")
 }
 ul {
   list-style-type: none;
@@ -60,10 +43,11 @@ li button {
   padding: 8px 20px;
   text-decoration: none;
   size: 30px;
-  border: 1px solid #555;
+  border: 1px solid #fcfdbd;
 }
 a {
   text-decoration: none;
+  
 }
 
 .split {
@@ -83,7 +67,7 @@ a {
 #stopWatch {
   color: #000000;
   background-color:transparent;
-  margin-top: 180px;
+  margin-top: 200px;
   font-size: xx-large;
   justify-content: center;
   left: 0;
@@ -91,7 +75,7 @@ a {
   top: 50%;
   width: 50%;
   text-align: center;
-  font-size: 150px;
+  font-size: 80px;
   align-items: center;
   margin-left: 45px;
 }
@@ -100,24 +84,7 @@ a {
   right: 0;
   background-color: #840303;
   opacity: 1;
-  background-image: repeating-linear-gradient(
-      45deg,
-      #fcfdbd 25%,
-      transparent 25%,
-      transparent 50%,
-      #fcfdbd 75%,
-      #fcfdbd
-    ),
-    repeating-linear-gradient(
-      45deg,
-      #fcfdbd 25%,
-      #840303 25%,
-      #840303 75%,
-      #fcfdbd 75%,
-      #fcfdbd
-    );
-  background-position: 0 0, 40px 40px;
-  background-size: 80px 80px;
+  background-image: url("./Images/background.jpg")
 }
 .centered {
   position: absolute;
@@ -134,14 +101,14 @@ td {
   border-radius: 10px;
   width: 150px;
   height: 150px;
-  background-color: aliceblue;
+  background-color: #fcfdbd;
 }
 img {
   width: 90px;
 }
 button {
-  background-color: none;
-  border: none;
+  background-color:#fcfdbd;
+  border: solid black;
   display: inherit;
   font-size: 16px;
   width: 100%;
@@ -149,7 +116,7 @@ button {
 }
 button:hover {
   background-color: #840303;
-  color: white;
+  color: #fcfdbd;
   font-size: 20px;
 }
 #myVideo {
@@ -172,7 +139,7 @@ button:hover {
   border-style: groove;
   padding: 10px;
   margin: 20px;
-  background-color: white;
+  background-color: #fcfdbd;
 }
 h2 {
   color: #840303;
