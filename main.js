@@ -42,10 +42,11 @@ $("#play").on("click", function () {
     $(".image").hide();
     for (var j = 1; j < 17; j++) {
       $(`#${j}`).append(
-        `<img  class="cars" src="./Images/S0-Cars-2-une-histoire-qui-fache-l-industrie-petroliere-70533.jpg" alt="cars" ></img>`
+        `<img  class="cars" src="./Images/S0-Cars-removebg-preview.png" alt="cars" ></img>`
       );
     }
     playing();
+    $('.left ul').append('<div id="stopWatch">0</div>')
   }, 1000);
 var time=0
   var playing = function () {
@@ -94,7 +95,7 @@ var time=0
               if(logos.length===8){$('.right').hide()
             $('.congrats').html("Congratulations you won !")
           $('.Vid').show()
-          clearInterval()
+          
           }
               $(".chosenH").addClass("validatedH");
               $(".chosen").addClass("validated");
@@ -110,6 +111,6 @@ var time=0
           }
         }, 1000);
       });
-    }
+    }clearInterval()
   };
 });
