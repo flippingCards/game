@@ -16,9 +16,18 @@ var logos = [
   "Images/porssche.png",
   "Images/Tesla.png",
 ];
+$('.Vid').hide()
 $(".right").hide();
+$(".validated").show();
+$(".validatedH").hide();
 
+$("body").dblclick(function () {
+  alert("Double Clicking is not allowed on this website !");
+  location.reload();
+});
 $("#play").on("click", function () {
+  
+  $(".play").attr("disabled", true);
   $(".right").show();
   for (var i = 1; i < 17; i++) {
     var getRandomInt = function () {
@@ -26,25 +35,35 @@ $("#play").on("click", function () {
     };
     let x = getRandomInt();
     console.log(getRandomInt());
-    $(`#${i}`).append(
-      `<img id="A${i}" class="image" src=${logos.splice(x, 1)}>`
-    );
+    $(`#${i}`).append(`<img  class="image" src=${logos.splice(x, 1)}>`);
   }
   console.log(logos);
   setTimeout(function () {
     $(".image").hide();
     for (var j = 1; j < 17; j++) {
       $(`#${j}`).append(
-        `<img id='B${j}'  class="cars" src="./Images/S0-Cars-2-une-histoire-qui-fache-l-industrie-petroliere-70533.jpg" alt="cars" ></img>`
+        `<img  class="cars" src="./Images/S0-Cars-2-une-histoire-qui-fache-l-industrie-petroliere-70533.jpg" alt="cars" ></img>`
       );
     }
+    playing();
   }, 1000);
-
+var time=0
   var playing = function () {
+    setInterval(function () {
+      $("#stopWatch").html(i);
+      i++;
+      time=i
+  }, 1000);
+    
+    // if($('td').children().hasClass('validated')){$('td').unbind("click")
+    //           clicking = 0;
+    //      chosenImg = [];}
     let chosenImg = [];
     let clicking = 0;
     if (clicking === 0) {
-      $(`td`).on("click", function () {
+      $(`td`).on("click", function (e) {
+        console.log($(this).children().hasClass("validated"));
+
         $(this).children(".cars").hide();
         $(this).children(".image").show();
         $(this).children(".image").addClass("chosen");
@@ -53,43 +72,44 @@ $("#play").on("click", function () {
         console.log(chosenImg);
         clicking++;
         setTimeout(function () {
-          if (clicking  === 1) {
-            
-            $(".chosenH").show();
-            $(".chosen").hide();
-            $(".validated").show();
-            $(".validatedH").hide();
-            clicking = 0;
-            chosenImg = [];
-            $(".image").removeClass("chosen");
-            $(".cars").removeClass("chosenH");
-            
+          if (clicking === 1) {
+            setTimeout(function () {
+              $(".chosenH").show();
+              $(".chosen").hide();
+              $(".image").removeClass("chosen");
+              $(".cars").removeClass("chosenH");
+              clicking = 0;
+              chosenImg = [];
+            }, 1000);
           } else if (clicking === 2) {
             if (chosenImg[0] !== chosenImg[1]) {
               $(".chosenH").show();
               $(".chosen").hide();
-              clicking = 0;
-              chosenImg = [];
               $(".chosen").removeClass("chosen");
               $(".chosenH").removeClass("chosenH");
+              clicking = 0;
+              chosenImg = [];
             } else {
+              logos.push(chosenImg);
+              if(logos.length===8){$('.right').hide()
+            $('.congrats').html("Congratulations you won !")
+          $('.Vid').show()
+          clearInterval()
+          }
               $(".chosenH").addClass("validatedH");
               $(".chosen").addClass("validated");
               $(".chosen").removeClass("chosen");
               $(".chosenH").removeClass("chosenH");
+
               clicking = 0;
               chosenImg = [];
-              $('.validated').show()
-              $('.validatedH').hide()
-              logos.push(chosenImg)
             }
             console.log(chosenImg);
             console.log(clicking);
-            console.log(logos)
+            console.log(logos);
           }
-        }, 2000);
+        }, 1000);
       });
     }
   };
-  playing();
 });
