@@ -2,26 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Flipping Game</title>
   </head>
   <body>
-    <div id="navBar" class="left">
+    <div class="left">
       <ul>
-        <li><a id="play" href="#index.html">Play</a></li>
-        <li><a href="#playerScores.html">player Scores</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a id="play" href="#index.html"><button class="play"><b>Play</b></button></a></li>
+        <li><a href="playerScores.html"><button><b>Player Scores</b></button></a></li>
+        <li><a href="about.html"><button><b>About</b></button></a></li>
+        
       </ul>
+      
     </div>
     <div class="split right">
       <table class="centered">
         <tr>
-          <td class="img" id="1"></td>
-          <td class="img" id="2"></td>
-          <td class="img" id="3"></td>
-          <td class="img" id="4"></td>
+          <td  id="1"></td>
+          <td  id="2"></td>
+          <td  id="3"></td>
+          <td  id="4"></td>
         </tr>
         <tr>
           <td id="5"></td>
@@ -42,6 +45,13 @@
           <td id="16"></td>
         </tr>
       </table>
+     
+     
+    </div>
+    <div class="Vid">    
+      <video autoplay muted loop id="myVideo">
+        <source src="./vids/videoplayback.mp4" type="video/mp4">
+      </video>
     </div>
   </body>
   <script src="main.js"></script>
